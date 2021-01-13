@@ -1,0 +1,16 @@
+{
+  "name": "haiku",
+  "version": "1.0.0",
+  "description": "featuring 4 famous haikus",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.html",
+    "dev": "parcel src/index.html"
+  },
+  "author": "Htoomyat Naing",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  }
+}

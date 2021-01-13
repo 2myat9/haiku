@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "DM Serif Display", serif;
+  color: white;
+  overflow: hidden;
+}
+
+.panel1,
+.panel3 {
+  color: black;
+}
+
+p {
+  position: relative;
+  animation: text 2s ease;
+  max-width: 80%;
+}
+
+@keyframes text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+p.poem-author {
+  font-style: italic;
+}
+
+p.poem-title {
+  text-decoration: underline;
+  margin-bottom: 60px;
+}
+
+.panel-container {
+  display: flex;
+  min-width: 100vw;
+}
+
+.panel {
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  font-size: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
+}
+
+.panel:hover {
+  cursor: pointer;
+}
+
+.panel > * {
+  /* for p inside panel */
+  transition: transform 0.5s,
+    font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
+}
+
+.panel > p:first-child {
+  transform: translateY(-500px);
+}
+.panel > p:last-child {
+  transform: translateY(500px);
+}
+.panel.open-active > p:first-child {
+  transform: translateY(0px);
+}
+.panel.open-active > p:last-child {
+  transform: translateY(0px);
+}
+
+/* put background in pseudoelement to reduce its opacity separately */
+.panel1::before {
+  background-image: url("https://images.unsplash.com/photo-1609374409429-640d08d674c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80");
+  background-position: center;
+  background-size: cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0.75;
+}
+.panel2::before {
+  background-image: url("https://images.unsplash.com/photo-1587074932827-ca7d4f635d89?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80");
+  background-position: center;
+  background-size: cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0.75;
+}
+.panel3::before {
+  background-image: url("https://images.unsplash.com/photo-1609530701321-ef4068dd47ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=918&q=80");
+  background-position: bottom;
+  background-size: cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0.75;
+}
+.panel4::before {
+  background-image: url("https://images.unsplash.com/photo-1610045058619-8c37e8913c55?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80");
+  background-position: bottom;
+  background-size: cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0.75;
+}
+
+/* increase size of a flex item */
+.panel.open {
+  flex: 3;
+}
+
+/* use below properties to maintain font-size separately */
+/* .panel.open > p:nth-child(2) {
+  font-size: 3rem;
+}
+.panel.open > p:first-child {
+  font-size: 1.5rem;
+}
+.panel.open > p:last-child {
+  font-size: 1.5rem;
+} */
